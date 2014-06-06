@@ -6,6 +6,8 @@ gem 'thin', '~> 1.6.2'
 gem 'uglifier', '>= 1.3.0'
 gem 'quiet_assets', '~> 1.0.2'
 
+gem 'devise', '~> 3.2.4'
+
 gem 'haml-rails', '~> 0.5.3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bourbon'
