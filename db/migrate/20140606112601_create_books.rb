@@ -12,6 +12,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :weight, :null => false
       t.text    :decription, :null => false
       t.integer :author_id
+      add_index :books, :author_id
 
       t.timestamps
     end
