@@ -1,6 +1,7 @@
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
+      t.belongs_to :author
       t.string  :name, :null => false
       t.string  :series, :null => false
       t.string  :publisher, :null => false
@@ -11,10 +12,10 @@ class CreateBooks < ActiveRecord::Migration
       t.string  :isbn, :null => false
       t.integer :weight, :null => false
       t.text    :decription, :null => false
-      t.integer :author_id
-      add_index :books, :author_id
+
 
       t.timestamps
     end
+      add_index :books, :author_id
   end
 end
