@@ -1,5 +1,4 @@
 class Author < ActiveRecord::Base
-  validates :first_name, length: { minimum: 2 }
-  validates :last_name,  length: { minimum: 2 }
+  validates :first_name, :last_name, presence: true
   has_many :books
 end
