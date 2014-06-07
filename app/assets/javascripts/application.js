@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function(){
+  $(".button").click(function() {
+    $("div").removeClass('asd');
+    $(this).addClass('asd');
+  });
+});
