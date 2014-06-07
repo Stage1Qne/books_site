@@ -1,1 +1,14 @@
 %h1 ADMIN FUCK YEAH
+.button
+  %span new book
+.button
+  %span
+    = link_to "New Book", new_admin_book_path
+.button
+  %span
+    = link_to "New Author", new_admin_author_path
+
+/ = render ('new_book')
+
+
+

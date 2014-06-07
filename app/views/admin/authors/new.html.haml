@@ -1,0 +1,15 @@
+.form
+  = form_for [:admin, @author] do |author|
+    - if @author.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@author.errors.count, "error")} prohibited this author from being saved:"
+        %ul
+          - @author.errors.full_messages.each do |msg|
+            %li= msg
+
+    Full Name :
+    %br
+    = author.text_field :full_name
+    %br
+    = author.submit
+
