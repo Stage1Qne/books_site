@@ -1,0 +1,74 @@
+= form_for [:admin, @book] do |book|
+  .ui.form.purple.segment
+    .errors.book.ui.red.message
+    .ui.two.column.middle.aligned.relaxed.grid.basic.segment
+      .column
+        %h2.ui.header
+          %i.square.add.book.purple.icon
+          .content
+            New Book
+            .sub.header Form to create a new Book.
+        .field
+          %label Book name
+          .ui.left.right.labeled.icon.input
+            %i.quote.left.icon
+            = book.text_field :name, placeholder: "Name"
+        #author-field
+          .field
+            %label Author
+            %i.square.add.user.teal.icon
+            = book.select :author_id, @authors
+        .new-author.ui.center.aligned.basic.button
+          %i.icon.add
+          New Author
+        .ui.form
+          .field
+            %label Description
+            = book.text_area :decription
+      .ui.vertical.divider
+      .column
+        .field
+          %label Series
+          .ui.left.labeled.icon.input
+            %i.bookmark.icon
+            = book.text_field :series, placeholder: "Series"
+        .field
+          %label Publisher
+          .ui.left.labeled.icon.input
+            %i.users.icon
+            = book.text_field :publisher, placeholder: "Publisher"
+        .field
+          %label Year
+          .ui.left.labeled.icon.input
+            %i.calendar.icon
+            = book.text_field :year, placeholder: "Year"
+        .field
+          %label Pages
+          .ui.left.labeled.icon.input
+            %i.barcode.icon
+            = book.text_field :pages, placeholder: "Pages"
+        .field
+          %label Binding
+          .ui.left.labeled.icon.input
+            %i.book.icon
+            = book.text_field :binding, placeholder: "Binding"
+        .field
+          %label Format
+          .ui.left.labeled.icon.input
+            %i.file.icon
+            = book.text_field :format, placeholder: "Format"
+        .field
+          %label ISBN
+          .ui.left.labeled.icon.input
+            %i.globe.icon
+            = book.text_field :isbn, placeholder: "ISBN"
+        .field
+          %label Weight
+          .ui.left.labeled.icon.input
+            %i.dashboard.icon
+            = book.text_field :weight, placeholder: "Weight"
+    = book.submit class: "ui purple large button"
+.ui.modal
+  %i.close.icon
+  = render "admin/authors/form"
+

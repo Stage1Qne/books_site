@@ -10,13 +10,16 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Loads all Semantic javascripts
 //= require jquery
 //= require jquery_ujs
+//= require semantic-ui
 //= require_tree .
 
 $(function(){
-  $(".button").click(function() {
-    $("div").removeClass('asd');
-    $(this).addClass('asd');
-  });
+  $('.ui.dropdown')
+  .dropdown();
 });
+
+
+

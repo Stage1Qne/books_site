@@ -1,5 +1,26 @@
-- @books.each do |b|
-  = b.author_id
-  = b.name
-  %br
-  %br
+- theads = ["ID", "Name", "Author", "Series", "Publisher", "Year", "Pages", "Binding", "Format", "ISBN", "Weight", "Actions"]
+- fields = ['id', 'name', 'author', 'series', 'publisher', 'year', 'pages', 'binding', 'format', 'isbn', 'weight']
+
+
+%table.ui.purple.sixteen.column.table.segment
+  %thead
+  %tr
+  - theads.each do |t_head|
+    %th
+      =t_head
+  %tbody
+  - @books.each do |b|
+    %tr
+    %tr
+    - fields.each do |f|
+      %td
+        =f != 'author'? b.send(f) : b.author.full_name
+    %td
+      =link_to "edit", edit_admin_book_path(b), :class => "ui basic tiny button"
+      =link_to "delete", admin_book_path(b), method:"delete" ,:class => "ui basic right tiny button"
+  %tfoot
+    %tr
+      %th{colspan: "12"}
+        %a.ui.basic.button{href: new_admin_book_path}
+          %i.purple.icon.add
+          New Book

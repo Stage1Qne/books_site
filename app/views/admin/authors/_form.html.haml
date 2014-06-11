@@ -1,0 +1,20 @@
+= form_for [:admin, @author] do |author|
+  .ui.form.teal.segment
+    .errors.author.ui.red.message
+    %h2.ui.header
+      %i.square.add.user.teal.icon
+      .content
+        Author
+        .sub.header Form to create a new Author.
+    %br
+    .field
+      %label Author
+      .ui.left.labeled.icon.input
+        %i.user.icon
+        = author.text_field :full_name, placeholder: "Full name"
+        .ui.corner.label
+          %i.icon.asterisk
+    %br
+    .cancel.ui.right.floated.secondary.basic.button
+      %item Cancel
+    = author.submit class: "ui secondary large button"

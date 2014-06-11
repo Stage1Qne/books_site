@@ -1,0 +1,31 @@
+- theads = ["ID", "Full name", "Actions"]
+- fields = ['id', 'full_name']
+
+
+%table.ui.teal.five.column.table.segment
+  %thead
+    %tr
+    - theads.each do |t_head|
+      %th
+        =t_head
+  %tbody
+  - @authors.each do |b|
+    %tr
+    %tr
+    - fields.each do |f|
+      %td
+        =b.send(f)
+    %td
+      =link_to "edit", edit_admin_author_path(b), :class => "ui basic tiny button"
+      =link_to "delete", admin_author_path(b), method:"delete" ,:class => "ui basic right tiny button"
+  %tfoot
+    %tr
+      %th{colspan: "3"}
+        %a.ui.basic.button{href: new_admin_author_path}
+          %i.purple.icon.add
+          New Author
+
+
+
+
+

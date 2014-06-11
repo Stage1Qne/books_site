@@ -1,0 +1,87 @@
+$(function(){
+  $("header a").click(function(){
+    $(this).addClass('active');
+  });
+  $('header a').filter(function() {
+      return this.href == window.location.href;
+  }).addClass('active');
+});
+
+$(function(){
+  $(".form-button").click(function() {
+    $("div").removeClass('asd');
+    $(this).addClass('asd');
+    $("test").show();
+  });
+});
+
+$(function(){
+  $(".new-author.ui.basic.button").click(function() {
+    $('.modal')
+    .modal('show');
+  });
+});
+
+$(function(){
+  $(".cancel.ui.basic.button").click(function() {
+    $('.modal')
+    .modal('hide');
+  });
+});
+
+$(function(){
+  $("#new_author").submit(function() {
+    $.ajax({
+      url: '/admin/authors',
+      method: 'POST',
+      dataType: "json",
+      data: $(this).serialize(),
+    })
+    .done(function(response) {
+      $("select#book_author_id").append("<option selected='selected' value=" + response.id +">"+response.full_name +"</option>");
+      $('.modal')
+        .modal('hide');
+      $("field").removeClass('error')
+      $(".errors.author").hide().empty();
+    })
+    .fail(function(data) {
+      $("#new_author .field").addClass('error')
+      $(".errors.author").slideDown('fast', function() {
+        $(this).empty();
+        $(this).prepend("<div class='header'>What went wrong?</div>");
+        $(data.responseJSON).each(function(i){
+          $(".errors.author").append("<li>" + data.responseJSON[i] + "</li>");
+          console.log(data.responseJSON[i]);
+        });
+      });
+    })
+    return false;
+  });
+});
+
+$(function(){
+  $("#new_book").submit(function() {
+    $.ajax({
+      url: '/admin/books',
+      method: 'POST',
+      dataType: "json",
+      data: $(this).serialize(),
+    })
+    .done(function(response) {
+      $("#new_book .field").removeClass('error')
+      $(".errors.book").hide().empty()
+      window.location.replace("/admin/books");
+    })
+    .fail(function(data) {
+      $(".errors.book").slideDown('fast', function() {
+        $(this).empty();
+        $(this).prepend("<div class='header'>What went wrong?</div><ul class='list'>");
+        $(data.responseJSON).each(function(i){
+          $(".errors.book").append("<li>" + data.responseJSON[i] + "</li>");
+          console.log(data.responseJSON[i]);
+        });
+      });
+    });
+  return false;
+  });
+});
