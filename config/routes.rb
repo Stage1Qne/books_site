@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'books#index'
   devise_for :admins, controllers: {sessions: 'admin/sessions'}, path: '/admin'
   resources :authors
   resources :books

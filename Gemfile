@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'semantic-ui-sass', '~> 0.16.1.0'
+gem 'kaminari', '~> 0.16.1'
 
 group :development do
   gem 'better_errors', '~> 1.1.0'
