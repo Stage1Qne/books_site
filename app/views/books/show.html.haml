@@ -1,0 +1,65 @@
+.book
+  .left
+    .cover
+      .ui.blue.segment
+        .ui.image
+          %img{src: "http://lorempixel.com/250/350/", class: "ui image"}
+    .author
+      .ui.blue.message
+        %h2{align: "center"} AUTHOR
+        .author_avatar
+          %img{src: "http://lorempixel.com/250/350/", class: "circular ui image"}
+        %h2#author_name= @book.author.full_name
+  .right
+    .inf
+      .ui.piled.blue.segment
+        .ui.ribbon.teal.label
+          .ui.huge.header= @book.name
+        .table_params
+          %table.ui.basic.table
+            %tbody
+              %br
+              %tr
+                %td{align: "right"}
+                  Series
+                  %i.bookmark.icon
+                %td= @book.series
+              %tr
+                %td{align: "right"}
+                  Publisher
+                  %i.users.icon
+                %td= @book.publisher
+              %tr
+                %td{align: "right"}
+                  Publishing year
+                  %i.calendar.icon
+                %td= @book.year
+              %tr
+                %td{align: "right"}
+                  Pages
+                  %i.barcode.icon
+                %td= @book.pages
+              %tr
+                %td{align: "right"}
+                  Binding
+                  %i.book.icon
+                %td= @book.binding
+              %tr
+                %td{align: "right"}
+                  Format
+                  %i.file.icon
+                %td= @book.format
+              %tr
+                %td{align: "right"}
+                  ISBN
+                  %i.globe.icon
+                %td= @book.isbn
+              %tr
+                %td{align: "right"}
+                  Weight
+                  %i.dashboard.icon
+                %td= @book.weight
+        %h4.ui.top.purple.attached.header Description
+        .ui.purple.segment.attached
+          %p= @book.decription
+

@@ -1,0 +1,12 @@
+.ui.borderless.pagination.menu
+  = paginate @books
+.books-list
+  .ui.items
+    - @books.each do |book|
+      .item{align: "center"}
+        %img{src: "http://lorempixel.com/250/350/", class: "ui image"}
+        .content
+          .name= link_to book.name, book, :class => "button"
+          %p.description= book.author.full_name
+        .extra
+          COMMENTS COUNT: NUMBER
