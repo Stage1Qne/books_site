@@ -8,7 +8,6 @@ gem 'quiet_assets', '~> 1.0.2'
 
 gem 'devise', '~> 3.2.4'
 
-gem 'ancestry', '~> 2.1.0'
 
 gem 'haml-rails', '~> 0.5.3'
 gem 'sass-rails', '~> 4.0.3'
@@ -18,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'semantic-ui-sass', '~> 0.16.1.0'
 gem 'kaminari', '~> 0.16.1'
+gem 'ancestry', '~> 2.1.0'
+gem 'paperclip', '~> 4.1.1'
 
 group :development do
   gem 'better_errors', '~> 1.1.0'
