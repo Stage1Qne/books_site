@@ -72,11 +72,6 @@
         COMMENTS
   .ui.threaded.comments
     =render 'comments/comments'
-  :javascript
-    $( ".ui.form.reply" ).hide();
-    $( ".reply_button" ).click(function() {
-      $("#comment-"+$(this).attr("id")).toggle("slow");
-    });
 
   .new-comment
     = render 'comments/new_comment'

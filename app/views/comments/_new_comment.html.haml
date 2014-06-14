@@ -6,7 +6,7 @@
       New Comment
       .sub.header Write your opinion about this book
   .ui.form
-    = form_for @comment = Comment.new(:parent_id => params[:parent_id]) do |f|
+    = form_for @comment do |f|
       = f.hidden_field :book_id, value: params[:id]
       = f.hidden_field :parent_id, :value => @comment.parent_id
       .field

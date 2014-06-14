@@ -1,4 +1,4 @@
-= form_for @comment = Comment.new(:book_id => params[:book_id], :parent_id => params[:parent_id]) do |f|
+= form_for Comment.new do |f|
   = f.hidden_field :parent_id, :value => comment.parent_id
   = f.hidden_field :book_id, value: params[:id]
   .field
