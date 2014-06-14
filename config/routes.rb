@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'books#index'
+  resources :comments
+
   devise_for :admins, controllers: {sessions: 'admin/sessions'}, path: '/admin'
   resources :authors
   resources :books

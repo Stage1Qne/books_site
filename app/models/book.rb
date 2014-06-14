@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
   validates :decription, presence: true, length: { maximum: 1000 }
 
   belongs_to :author
+  has_many :comments
 
   paginates_per 9
 end
