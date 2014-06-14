@@ -8,6 +8,8 @@ gem 'quiet_assets', '~> 1.0.2'
 
 gem 'devise', '~> 3.2.4'
 
+gem 'ancestry', '~> 2.1.0'
+
 gem 'haml-rails', '~> 0.5.3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'bourbon'
