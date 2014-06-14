@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    @comment = Comment.new(:parent_id => params[:parent_id])
   end
 
   # GET /comments/1/edit
@@ -24,11 +24,13 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    # @comment = Comment.new(comment_params)
+    @comment = Comment.create(params[:comment].permit(:full_name, :email, :content,
+                                   :parent_id, :book_id))
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to book_path(@comment.book_id), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:email, :full_name, :content)
+      params.require(:comment).permit(:email, :full_name, :parent_id, :content)
     end
 end

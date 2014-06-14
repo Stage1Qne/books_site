@@ -1,0 +1,20 @@
+- for comment in @book.comments(:book_id => @book.id)
+  - if comment.ancestry == nil
+    .comment
+      %a.avatar
+        %img{src: "/images/demo/avatar.jpg"}/
+        / = image_tag comment.avatar.url(:thumb)
+      .content
+        %a.author= comment.full_name
+        .metadata
+          %span.date= comment.created_at.strftime("%B %d, %Y")
+        .text= comment.content
+        .actions
+          %a.reply_button{id: comment.id} Reply
+          %a.delete_button
+            = link_to "Destroy", comment, :confirm => "Are you sure?", :method =>:delete
+          .reply_form
+            .ui.reply.form{id: "comment-#{comment.id}"}
+              = render 'comments/add_reply', :comment => @book.comments.build(:parent_id => comment, :book_id => @book.id)
+      - if not comment.child_ids.empty?
+        = render 'comments/subcomment', :subcomment => comment.children

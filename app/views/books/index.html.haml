@@ -9,4 +9,5 @@
           .name= link_to book.name, book, :class => "button"
           %p.description= book.author.full_name
         .extra
-          COMMENTS COUNT: NUMBER
+          COMMENTS COUNT:
+          =book.comments.count

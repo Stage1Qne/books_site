@@ -1,0 +1,27 @@
+.ui.raised.segment
+  %h1{align: "center", style: "padding-top: 15px;"}
+    %i.icon.inverted.circular.teal.comment
+  %h3.ui.header{align: "center"}
+    .content
+      New Comment
+      .sub.header Write your opinion about this book
+  .ui.form
+    = form_for @comment = Comment.new(:parent_id => params[:parent_id]) do |f|
+      = f.hidden_field :book_id, value: params[:id]
+      = f.hidden_field :parent_id, :value => @comment.parent_id
+      .field
+        %label Full Name
+        = f.text_field :full_name, placeholder: "Full name"
+      .field
+        %label Email
+        = f.text_field :email, placeholder: "Email"
+      .ui.form
+        .field
+          %label Description
+          = f.text_area :content, :rows => 8
+      .field
+        %label Avatar
+        .file_field
+          = f.file_field :avatar, class: "ui button"
+      %div
+        = f.submit "Add Comment", class: "ui fluid button teal submit"

@@ -60,6 +60,7 @@
                     Weight
                     %i.dashboard.icon
                   %td= @book.weight
+
           %h4.ui.top.purple.attached.header Description
           .ui.purple.segment.attached
             %p= @book.decription
@@ -69,3 +70,13 @@
       %h3{align: "center"}
         %i.icon.inverted.circular.teal.comment
         COMMENTS
+  .ui.threaded.comments
+    =render 'comments/comments'
+  :javascript
+    $( ".ui.form.reply" ).hide();
+    $( ".reply_button" ).click(function() {
+      $("#comment-"+$(this).attr("id")).toggle("slow");
+    });
+
+  .new-comment
+    = render 'comments/new_comment'
