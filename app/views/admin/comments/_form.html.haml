@@ -1,0 +1,26 @@
+.ui.green.form.segment
+  = form_for @comment do |f|
+    .field
+      %label Book ID
+      = f.text_field :book_id, value: params[:id], placeholder: "Book ID"
+    .field
+      %label Parent ID
+      = f.text_field :parent_id, :value => @comment.parent_id, placeholder: "Parent ID"
+    .field
+      %label Full Name
+      = f.text_field :full_name, placeholder: "Full name"
+    .field
+      %label Email
+      = f.text_field :email, placeholder: "Email"
+    .ui.form
+      .field
+        %label Description
+        = f.text_area :content, :rows => 8
+    .field
+      %label Avatar
+      = f.file_field :avatar
+      / .file_field
+
+      /   = f.file_field :avatar, class: "ui button"
+    %div
+      = f.submit class: "ui button teal submit"

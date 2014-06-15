@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :admins
     resources :authors
     resources :books
+    resources :comments
 
   end
 end

@@ -1,0 +1,26 @@
+- theads = ["ID", "Book ID" ,"Parent ID", "Full name", "email", "Content", "Actions"]
+- fields = ['id', "book_id" ,'parent_id', 'full_name', 'email', 'content']
+
+
+%table.ui.green.sixteen.column.table.segment
+  %thead
+  %tr
+  - theads.each do |t_head|
+    %th
+      =t_head
+  %tbody
+  - @comments.each do |c|
+    %tr
+    %tr
+    - fields.each do |f|
+      %td
+        =c.send(f)
+    %td
+      =link_to "edit", edit_admin_comment_path(c), :class => "ui basic tiny button"
+      =link_to "delete", admin_comment_path(c), method:"delete" ,:class => "ui basic right tiny button"
+  %tfoot
+    %tr
+      %th{colspan: "12"}
+        %a.ui.basic.button{href: new_admin_comment_path}
+          %i.green.icon.add
+          New Comment
