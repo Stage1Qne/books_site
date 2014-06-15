@@ -3,8 +3,7 @@
     .seven.wide.column.left
       .cover
         .ui.blue.segment
-          .ui.image
-            = image_tag @book.cover.url(:medium), class: "ui image"
+          = image_tag @book.cover.url(:medium)
       .author
         .ui.blue.message
           %h2{align: "center"} AUTHOR
@@ -65,7 +64,7 @@
           .ui.purple.segment.attached
             %p= @book.decription
 .author-books
-  .ui.six.connected.items
+  .ui.five.connected.items
     .row
       - @author_books.each do |b|
         -if not b==@book

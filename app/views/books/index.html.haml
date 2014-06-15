@@ -5,10 +5,14 @@
   .ui.items
     - @books.each do |book|
       .item{align: "center" }
-        .ui.image= image_tag book.cover.url(:medium), class: "ui image"
+        =link_to book_path(book) do
+          .ui.image= image_tag book.cover.url(:medium)
         .content
           .name= link_to book.name, book, :class => "button"
           %p.description= book.author.full_name
         .extra
           COMMENTS COUNT:
           =book.comments.count
+.pagination-wrap.down
+  .ui.borderless.pagination.menu
+    = paginate @books
