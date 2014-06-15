@@ -20,6 +20,8 @@ gem 'kaminari', '~> 0.16.1'
 gem 'ancestry', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.1'
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem 'better_errors', '~> 1.1.0'
   gem 'spring'
