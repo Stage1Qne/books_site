@@ -1,10 +1,11 @@
-.ui.borderless.pagination.menu
-  = paginate @books
+.pagination-wrap
+  .ui.borderless.pagination.menu
+    = paginate @books
 .books-list
   .ui.items
     - @books.each do |book|
-      .item{align: "center"}
-        %img{src: "http://lorempixel.com/250/350/", class: "ui image"}
+      .item{align: "center" }
+        .ui.image= image_tag book.cover.url(:medium), class: "ui image"
         .content
           .name= link_to book.name, book, :class => "button"
           %p.description= book.author.full_name

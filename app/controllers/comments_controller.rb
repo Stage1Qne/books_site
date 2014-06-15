@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def create
     # @comment = Comment.new(comment_params)
     @comment = Comment.create(params[:comment].permit(:full_name, :email, :content,
-                                   :parent_id, :book_id))
+                                   :parent_id, :book_id, :avatar))
 
     respond_to do |format|
       if @comment.save
@@ -71,6 +71,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:email, :full_name, :parent_id, :content)
+      params.require(:comment).permit(:email, :full_name, :parent_id, :content, :avatar)
     end
 end

@@ -1,15 +1,15 @@
-.book
+.book.cf
   .ui.grid
     .seven.wide.column.left
       .cover
         .ui.blue.segment
           .ui.image
-            %img{src: "http://lorempixel.com/250/350/", class: "ui image"}
+            = image_tag @book.cover.url(:medium), class: "ui image"
       .author
         .ui.blue.message
           %h2{align: "center"} AUTHOR
           .author_avatar
-            %img{src: "http://lorempixel.com/250/350/", class: "circular ui image"}
+            = image_tag @book.author.avatar.url(:medium), class: "ui circular image"
           %h2#author_name= @book.author.full_name
     .eight.wide.column.right
       .inf
@@ -64,6 +64,17 @@
           %h4.ui.top.purple.attached.header Description
           .ui.purple.segment.attached
             %p= @book.decription
+.author-books
+  .ui.six.connected.items
+    .row
+      - @author_books.each do |b|
+        -if not b==@book
+          %a.item{href: b.id}
+            .content
+              .name= b.name
+              -s = b.decription.split(" ").each_with_object("") {|x,ob| break ob unless (ob.length + " ".length + x.length <= 200);ob << (" " + x)}.strip
+              %p.description= s << "..."
+
 .comments
   .ui.info.message
     .header

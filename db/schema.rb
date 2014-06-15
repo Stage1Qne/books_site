@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614110537) do
+ActiveRecord::Schema.define(version: 20140615204854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,37 +36,49 @@ ActiveRecord::Schema.define(version: 20140614110537) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "authors", force: true do |t|
-    t.string   "full_name",  null: false
+    t.string   "full_name",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "books", force: true do |t|
     t.integer  "author_id"
-    t.string   "name",       null: false
-    t.string   "series",     null: false
-    t.string   "publisher",  null: false
-    t.integer  "year",       null: false
-    t.integer  "pages",      null: false
-    t.string   "binding",    null: false
-    t.string   "format",     null: false
-    t.string   "isbn",       null: false
-    t.integer  "weight",     null: false
-    t.text     "decription", null: false
+    t.string   "name",               null: false
+    t.string   "series",             null: false
+    t.string   "publisher",          null: false
+    t.integer  "year",               null: false
+    t.integer  "pages",              null: false
+    t.string   "binding",            null: false
+    t.string   "format",             null: false
+    t.string   "isbn",               null: false
+    t.integer  "weight",             null: false
+    t.text     "decription",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   add_index "books", ["author_id"], name: "index_books_on_author_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.integer  "book_id"
-    t.string   "email",      null: false
-    t.string   "full_name",  null: false
-    t.text     "content",    null: false
+    t.string   "email",               null: false
+    t.string   "full_name",           null: false
+    t.text     "content",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree

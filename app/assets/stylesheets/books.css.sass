@@ -1,12 +1,23 @@
 .container
   +clearfix
 
+
+
+.pagination-wrap
+  text-align: center
+
+.pagination
+  display: inline-block
+
 .books-list
   margin: 30px auto 0
   width: 996px
+  a
+    color: #009FDA
+    &:hover
+      color: #00BAFF
 
 .book
-  +clearfix
   .cover
     width: 280px
     margin-right: 60px
@@ -23,6 +34,9 @@
       text-align: center
   .inf
     float: left
+    width: 100%
+    td:first-child
+      width: 180px
 
   .right
     min-width: 360px
@@ -31,3 +45,8 @@
 
 .comments
   margin-top: 40px
+  .ui.threaded.comments
+    margin: 0 15%
+
+.authors-books
+  overflow-x: scroll

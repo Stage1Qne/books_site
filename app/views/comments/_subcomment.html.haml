@@ -1,7 +1,7 @@
 - for comment in subcomment
   .comment
     %a.avatar
-      %img{src: "http://lorempixel.com/250/350/"}/
+      = image_tag comment.avatar.url(:medium)
       / = image_tag comment.avatar.url(:thumb)
     .content
       %a.author= comment.full_name

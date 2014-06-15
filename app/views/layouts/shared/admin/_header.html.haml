@@ -4,6 +4,10 @@
     = link_to '<i class="users icon"></i> Authors'.html_safe, admin_authors_path, :class => "teal item"
     = link_to '<i class="book icon"></i> Books'.html_safe, admin_books_path, :class => "purple item"
     .right.menu
-      = link_to '<i class="sign out icon"></i> Log Out'.html_safe, destroy_admin_session_path, method: "delete", :class => "red item"
-
+      = link_to root_path, :class => "blue item" do
+        %i.sign.out.icon
+        Main site
+      = link_to destroy_admin_session_path, method: "delete", :class => "red item" do
+        %i.sign.out.icon
+        Log Out
 
