@@ -1,0 +1,25 @@
+.head_log-in
+  .ui.huge.teal.icon.header
+    %i.circular.red.user.icon>
+    Administration
+    .sub.header Configuring the DataBase
+#log-in-form
+  .ui.form.segment
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name), html:{class: "ui form log-in"}) do |f|
+      .field
+        %label Username
+        .ui.left.labeled.icon.input
+          %i.user.icon
+          .ui.corner.label
+            %i.icon.asterisk
+          = f.email_field :email,placeholder: "Admin login", :autofocus => true
+      .field
+        %label Password
+        .ui.left.labeled.icon.input
+          %i.shield.icon
+          .ui.corner.label
+            %i.icon.asterisk
+          = f.password_field :password, placeholder: "Password"
+      %div{align: "center"}
+        = f.submit "sign in", class: "ui blue button"
+        .ui.error.message

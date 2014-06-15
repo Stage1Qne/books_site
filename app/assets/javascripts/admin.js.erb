@@ -74,4 +74,37 @@ $(function(){
     });
     return false;
   });
+
+  $('.ui.form.log-in')
+  .form({
+    email: {
+      identifier : 'user[email]',
+      rules: [
+        {
+          type : 'empty',
+          prompt : 'Please enter a username'
+        }
+      ]
+    },
+    password: {
+      identifier : 'user[password]',
+      rules: [
+        {
+          type : 'empty',
+          prompt : 'Please enter a password'
+        },
+        {
+          type : 'length[9]',
+          prompt : 'Your password must be at least 9 characters'
+        }
+      ]
+    }
+  })
+;
+// $('.ui.dropdown')
+//   .form(validationRules, {
+//     inline : true,
+//     on : 'blur'
+//   });
+
 });
