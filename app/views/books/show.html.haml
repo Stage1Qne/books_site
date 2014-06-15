@@ -6,7 +6,7 @@
           = image_tag @book.cover.url(:medium)
       .author
         .ui.blue.message
-          %h2{align: "center"} AUTHOR
+          %h2 AUTHOR
           .author_avatar
             = image_tag @book.author.avatar.url(:medium), class: "ui circular image"
           %h2#author_name= @book.author.full_name
@@ -20,48 +20,48 @@
               %tbody
                 %br
                 %tr
-                  %td{align: "right"}
+                  %td
                     Series
                     %i.bookmark.icon
                   %td= @book.series
                 %tr
-                  %td{align: "right"}
+                  %td
                     Publisher
                     %i.users.icon
                   %td= @book.publisher
                 %tr
-                  %td{align: "right"}
+                  %td
                     Publishing year
                     %i.calendar.icon
                   %td= @book.year
                 %tr
-                  %td{align: "right"}
+                  %td
                     Pages
                     %i.barcode.icon
                   %td= @book.pages
                 %tr
-                  %td{align: "right"}
+                  %td
                     Binding
                     %i.book.icon
                   %td= @book.binding
                 %tr
-                  %td{align: "right"}
+                  %td
                     Format
                     %i.file.icon
                   %td= @book.format
                 %tr
-                  %td{align: "right"}
+                  %td
                     ISBN
                     %i.globe.icon
                   %td= @book.isbn
                 %tr
-                  %td{align: "right"}
+                  %td
                     Weight
                     %i.dashboard.icon
                   %td= @book.weight
 
-          %h4.ui.top.purple.attached.header Description
-          .ui.purple.segment.attached
+          %h4.ui.top.teal.attached.header Description
+          .ui.teal.segment.attached
             %p= @book.decription
 .author-books
   .ui.five.connected.items
@@ -77,7 +77,7 @@
 .comments
   .ui.info.message
     .header
-      %h3{align: "center"}
+      %h3
         %i.icon.inverted.circular.teal.comment
         COMMENTS
   .ui.threaded.comments

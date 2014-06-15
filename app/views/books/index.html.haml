@@ -4,7 +4,7 @@
 .books-list
   .ui.items
     - @books.each do |book|
-      .item{align: "center" }
+      .item
         =link_to book_path(book) do
           .ui.image= image_tag book.cover.url(:medium)
         .content

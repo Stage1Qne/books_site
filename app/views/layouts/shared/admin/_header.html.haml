@@ -1,9 +1,17 @@
 %header
   .ui.secondary.pointing.menu
-    = link_to '<i class="home icon"></i> Dashboard'.html_safe, admin_root_path, :class => "blue item"
-    = link_to '<i class="users icon"></i> Authors'.html_safe, admin_authors_path, :class => "teal item"
-    = link_to '<i class="book icon"></i> Books'.html_safe, admin_books_path, :class => "purple item"
-    = link_to '<i class="comment icon"></i> Comments'.html_safe, admin_comments_path, :class => "green item"
+    = link_to admin_root_path, :class => "blue item" do
+      %i.home.icon
+      Dashboard
+    = link_to admin_authors_path, :class => "teal item" do
+      %i.users.icon
+      Authors
+    = link_to admin_books_path, :class => "purple item" do
+      %i.book.icon
+      Books
+    = link_to admin_comments_path, :class => "green item" do
+      %i.comment.icon
+      Comments
     .right.menu
       = link_to root_path, :class => "blue item" do
         %i.sign.out.icon
