@@ -2,7 +2,6 @@
   .comment
     %a.avatar
       = image_tag comment.avatar.url(:medium)
-      / = image_tag comment.avatar.url(:thumb)
     .content
       %a.author= comment.full_name
       .metadata
@@ -15,6 +14,6 @@
         .reply_form
           .ui.reply.form{id: "comment-#{comment.id}"}
             = render 'comments/add_reply', :comment => @book.comments.build(:parent_id => comment, :book_id => @book.id)
-  - if not comment.child_ids.empty?
+  - unless comment.child_ids.empty?
     .comments
       = render 'comments/subcomment', :subcomment => comment.children

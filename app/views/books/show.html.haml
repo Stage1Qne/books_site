@@ -71,8 +71,8 @@
           %a.item{href: b.id}
             .content
               .name= b.name
-              -s = b.decription.split(" ").each_with_object("") {|x,ob| break ob unless (ob.length + " ".length + x.length <= 200);ob << (" " + x)}.strip
-              %p.description= s << "..."
+
+              %p.description= truncate b.decription, length: 200
 
 .comments
   .ui.info.message
