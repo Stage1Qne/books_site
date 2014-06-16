@@ -17,7 +17,7 @@
         =b.send(f)
     %td
       =link_to "edit", edit_admin_author_path(b), :class => "ui basic tiny button"
-      =link_to "delete", admin_author_path(b), method:"delete" ,:class => "ui basic right tiny button"
+      =link_to "delete", admin_author_path(b), data: {confirm: "are you sure?"}, method:"delete" ,:class => "ui basic right tiny button"
   %tfoot
     %tr
       %th{colspan: "3"}

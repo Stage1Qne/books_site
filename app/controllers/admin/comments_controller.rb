@@ -3,7 +3,7 @@ class Admin::CommentsController < Admin::BaseController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.not_moderated
   end
 
   # GET /comments/1
@@ -76,6 +76,6 @@ class Admin::CommentsController < Admin::BaseController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:email, :full_name, :parent_id, :content, :avatar)
+      params.require(:comment).permit(:email, :full_name, :parent_id, :content, :avatar, :moderated)
     end
 end

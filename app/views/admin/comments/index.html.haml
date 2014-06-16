@@ -1,5 +1,5 @@
-- theads = ["ID", "Book ID" ,"Parent ID", "Full name", "email", "Content", "Actions"]
-- fields = ['id', "book_id" ,'parent_id', 'full_name', 'email', 'content']
+- theads = ["Full name", "Content", "Actions"]
+- fields = ['full_name', 'content']
 
 
 %table.ui.green.sixteen.column.table.segment
@@ -10,14 +10,14 @@
       =t_head
   %tbody
   - @comments.each do |c|
-    %tr
-    %tr
-    - fields.each do |f|
+    %tr{id: c.id}
+      - fields.each do |f|
+        %td
+          =c.send(f)
       %td
-        =c.send(f)
-    %td
-      =link_to "edit", edit_admin_comment_path(c), :class => "ui basic tiny button"
-      =link_to "delete", admin_comment_path(c), method:"delete" ,:class => "ui basic right tiny button"
+        =link_to "edit", edit_admin_comment_path(c), :class => "ui basic tiny button"
+        .moderation_comment.ui.basic.tiny.button{data: {commentID: c.id} } moderated!
+        =link_to "delete", admin_comment_path(c),data: {confirm: "are you sure?"}, method:"delete" ,:class => "ui basic right tiny button"
   %tfoot
     %tr
       %th{colspan: "12"}

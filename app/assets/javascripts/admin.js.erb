@@ -101,10 +101,25 @@ $(function(){
     }
   })
 ;
-// $('.ui.dropdown')
-//   .form(validationRules, {
-//     inline : true,
-//     on : 'blur'
-//   });
+
+  $(".moderation_comment").click(function(){
+    var comment_id = $(this).attr("data-commentID");
+    $.ajax({
+      url: '/admin/comments/' + comment_id,
+      type: 'POST',
+      dataType: 'json',
+      data: { _method: "PUT", comment: {moderated: true} }
+    })
+    .done(function(response) {
+      $("#"+response.id).fadeOut();
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+
+  });
 
 });
