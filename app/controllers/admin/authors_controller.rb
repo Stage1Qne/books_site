@@ -1,5 +1,5 @@
 class Admin::AuthorsController < Admin::BaseController
-
+  authorize_resource
   def index
     @authors = Author.all
   end

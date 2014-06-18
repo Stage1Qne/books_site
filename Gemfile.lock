@@ -38,6 +38,7 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.2.2)
+    cancan (1.6.10)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
@@ -162,6 +163,7 @@ DEPENDENCIES
   ancestry (~> 2.1.0)
   better_errors (~> 1.1.0)
   bourbon
+  cancan (~> 1.6.10)
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.4)
   haml-rails (~> 0.5.3)

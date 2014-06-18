@@ -3,12 +3,16 @@
     = link_to admin_root_path, :class => "blue item" do
       %i.home.icon
       Dashboard
-    = link_to admin_authors_path, :class => "teal item" do
-      %i.users.icon
-      Authors
-    = link_to admin_books_path, :class => "purple item" do
-      %i.book.icon
-      Books
+    - if current_admin.roles.include?("admin")
+      = link_to admin_admins_path, :class => "red item" do
+        %i.users.icon
+        Users
+      = link_to admin_authors_path, :class => "teal item" do
+        %i.male.icon
+        Authors
+      = link_to admin_books_path, :class => "purple item" do
+        %i.book.icon
+        Books
     = link_to admin_comments_path, :class => "green item" do
       %i.comment.icon
       Comments

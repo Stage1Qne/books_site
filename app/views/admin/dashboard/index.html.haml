@@ -1,0 +1,28 @@
+.head_log-in
+  .ui.huge.teal.icon.header
+    %i.circular.red.user.icon>
+    =current_admin.login
+    .sub.header=current_admin.email
+#user-inf
+  .ui.form.blue.segment
+    .ui.divided.selection.list
+      .item
+        .ui.red.horizontal.label Role
+        =current_admin.roles.to_sentence.upcase
+      - if current_admin.roles.include?("admin")
+        %a.item{href: "admin/authors"}
+          .ui.teal.horizontal.label Authors
+          Authors count:
+          =Author.count
+        %a.item{href: "admin/books"}
+          .ui.purple.horizontal.label Books
+          Books count:
+          =Book.count
+      %a.item{href: "admin/comments"}
+        .ui.green.horizontal.label Comments
+        Comments count:
+        =Comment.count
+        (
+        =Comment.not_moderated.count
+        )
+

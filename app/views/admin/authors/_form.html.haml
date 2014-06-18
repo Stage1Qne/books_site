@@ -14,7 +14,10 @@
         = author.text_field :full_name, placeholder: "Full name"
         .ui.corner.label
           %i.icon.asterisk
-    = author.file_field :avatar
+    .ui.basic.button
+      %label Avatar
+      = author.file_field :avatar
+    %br
     %br
     .cancel.ui.right.floated.secondary.basic.button
       %item Cancel

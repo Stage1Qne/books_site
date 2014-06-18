@@ -13,6 +13,9 @@
       = f.text_area :content, :rows => 8
   .field
     %label Avatar
-    = f.file_field :avatar, class: "ui button"
+    .attachment-file-btn.ui.fluid.basic.button
+      %i.add.teal.icon
+      Attachment image
+    = f.file_field :avatar
   %div
     = f.submit "Add Reply", class: "ui fluid small button teal submit"

@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'quiet_assets', '~> 1.0.2'
 
 gem 'devise', '~> 3.2.4'
+gem 'cancan', '~> 1.6.10'
 
 
 gem 'haml-rails', '~> 0.5.3'
@@ -19,6 +20,7 @@ gem 'semantic-ui-sass', '~> 0.16.1.0'
 gem 'kaminari', '~> 0.16.1'
 gem 'ancestry', '~> 2.1.0'
 gem 'paperclip', '~> 4.1.1'
+
 
 gem 'rails_12factor', group: :production
 

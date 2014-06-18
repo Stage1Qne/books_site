@@ -12,6 +12,11 @@
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
+  <% for role in Admin::ROLES %>
+    <%= check_box_tag "admin[roles][#{role}]", role, @admin.roles.include?(role), {:name => "admin[roles][]"}%>
+    <%= label_tag "admin_roles_#{role}", role.humanize %><br />
+  <% end %>
+  <%= hidden_field_tag "admin[roles][]", "" %>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

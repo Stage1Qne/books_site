@@ -1,5 +1,5 @@
 class Admin::CommentsController < Admin::BaseController
-
+  authorize_resource
   # GET /comments
   # GET /comments.json
   def index

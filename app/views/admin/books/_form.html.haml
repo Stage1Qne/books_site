@@ -21,11 +21,13 @@
         .new-author.ui.center.aligned.basic.button
           %i.icon.add
           New Author
-        = book.file_field :cover
         .ui.form
           .field
             %label Description
             = book.text_area :decription
+        / .attachment-file-btn.ui.basic.button
+        %label Cover
+        = book.file_field :cover
       .ui.vertical.divider
       .column
         .field

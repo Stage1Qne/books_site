@@ -1,5 +1,5 @@
 class Admin::BooksController < Admin::BaseController
-
+  authorize_resource
   def index
     @books = Book.all
   end

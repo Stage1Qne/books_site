@@ -1,7 +1,16 @@
 %header
   .ui.secondary.pointing.menu
-    = link_to '<i class="grid layout icon"></i> Books list'.html_safe, books_path, :class => "blue item"
+    = link_to books_path, :class => "blue item" do
+      %i.grid.layout.icon
+      Book list
     .right.menu
-      = link_to '<i class="sign in icon"></i> Log In'.html_safe, new_admin_session_path, :class => "red item"
+      -if admin_signed_in?
+        = link_to admin_root_path, :class => "red item" do
+          %i.sign.in.icon
+          =current_admin.login
+      - else
+        = link_to new_admin_session_path, :class => "red item" do
+          %i.sign.in.icon
+          Log In
 
 
