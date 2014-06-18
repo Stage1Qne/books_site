@@ -6,6 +6,14 @@ $(function(){
       return this.href == window.location.href;
   }).addClass('active');
 
+  $("#query").focusin(function() {
+    $("#search-form").addClass('active')
+  });
+
+  $("#query").focusout(function() {
+    $("#search-form").removeClass('active')
+  });
+
   $(".form-button").click(function() {
     $("div").removeClass('asd');
     $(this).addClass('asd');

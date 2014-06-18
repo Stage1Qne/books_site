@@ -1,7 +1,11 @@
 class BooksController < ApplicationController
   def index
-    # @books = Book.all
-    @books = Book.order(:name).page params[:page]
+    if params[:query].present?
+      @books = Book.search(params[:query], page: params[:page])
+    else
+      # @books = Book.all.page params[:page]
+      @books = Book.order(:name).page params[:page]
+    end
   end
 
   def show

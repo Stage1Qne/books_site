@@ -1,4 +1,5 @@
 class Author < ActiveRecord::Base
+  searchkick
   validates :full_name, presence: true
 
   has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "100x100>" }, :default_url => "missing_author.png"

@@ -1,4 +1,5 @@
 class Comment < ActiveRecord::Base
+  searchkick
   default_scope { order("id ASC") }
   scope :not_moderated, -> (){ where moderated: false }
   validates :email, :full_name, presence: true

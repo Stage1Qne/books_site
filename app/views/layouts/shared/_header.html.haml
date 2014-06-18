@@ -3,6 +3,13 @@
     = link_to books_path, :class => "blue item" do
       %i.grid.layout.icon
       Book list
+    #search-form.green.item
+      = form_tag books_path, method: :get do
+        %i.search.icon
+        = text_field_tag :query, params[:query], placeholder: "Search..."
+        - submit_tag "Search", class: "ui tiny basic button search"
+        - if params[:query].present?
+          = link_to "clear", root_path, class: ""
     .right.menu
       -if admin_signed_in?
         = link_to admin_root_path, :class => "red item" do

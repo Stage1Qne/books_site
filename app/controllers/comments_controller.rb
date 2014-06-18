@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+
+
   def create
     # @comment = Comment.new(comment_params)
     @comment = Comment.create(params[:comment].permit(:full_name, :email, :content,
