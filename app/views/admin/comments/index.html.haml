@@ -16,7 +16,6 @@
           =c.send(f)
       %td
         - if current_admin.roles.include?("admin")
-          =link_to "edit", edit_admin_comment_path(c), :class => "ui basic tiny button"
           .moderation_comment.ui.basic.tiny.button{data: {commentID: c.id} } moderated!
           =link_to "delete", admin_comment_path(c),data: {confirm: "are you sure?"}, method:"delete" ,:class => "ui basic right tiny button"
         -else

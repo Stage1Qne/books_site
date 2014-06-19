@@ -3,7 +3,6 @@ class BooksController < ApplicationController
     if params[:query].present?
       @books = Book.search(params[:query], page: params[:page])
     else
-      # @books = Book.all.page params[:page]
       @books = Book.order(:name).page params[:page]
     end
   end

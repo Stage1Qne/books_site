@@ -52,8 +52,6 @@ class Admin::BooksController < Admin::BaseController
     end
   end
 
-  # DELETE /post_controllers/1
-  # DELETE /post_controllers/1.json
   def destroy
     @book=Book.find(params[:id])
     @book.destroy
