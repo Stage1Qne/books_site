@@ -10,7 +10,8 @@
         = comment.content
       .actions
         %a.reply_button{id: comment.id} Reply
-        %a.delete= link_to "Destroy", comment, :confirm => "Are you sure?", :method =>:delete
+        - unless comment.moderated?
+          = link_to "Not authenticated", new_admin_session_path
         .reply_form
           .ui.reply.form{id: "comment-#{comment.id}"}
             = render 'comments/add_reply', :comment => @book.comments.build(:parent_id => comment, :book_id => @book.id)

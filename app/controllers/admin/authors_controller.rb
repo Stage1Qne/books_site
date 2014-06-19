@@ -19,7 +19,7 @@ class Admin::AuthorsController < Admin::BaseController
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
+        format.html { redirect_to admin_authors_path, notice: 'Author was successfully created.' }
         format.json { render json: @author, status: :created, location: @author }
       else
         format.html { render action: "new" }
@@ -49,8 +49,6 @@ class Admin::AuthorsController < Admin::BaseController
     end
   end
 
-  # DELETE /post_controllers/1
-  # DELETE /post_controllers/1.json
   def destroy
     @author = Author.find(params[:id])
     @author.destroy
