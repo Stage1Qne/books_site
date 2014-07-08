@@ -133,6 +133,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
     sass (3.2.19)
+    sass-mediaqueries-rails (1.3)
+      sass (>= 3.2.0)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2.0)
@@ -191,6 +193,7 @@ DEPENDENCIES
   quiet_assets (~> 1.0.2)
   rails (= 4.1.1)
   rails_12factor
+  sass-mediaqueries-rails (~> 1.3)
   sass-rails (~> 4.0.3)
   searchkick (~> 0.7.7)
   semantic-ui-sass (~> 0.16.1.0)
