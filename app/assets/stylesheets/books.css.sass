@@ -59,59 +59,7 @@
 .authors-books
   overflow-x: scroll
 
-@include screen(768px, 1280px)
 
-@include screen(320px, 480px)
-  .container,
-  header,
-  .pagination-wrap,
-  .books-list,
-    width: 400px
-
-  header
-    .item,
-    #search-form
-      width: 133px
-    #search-form
-      i
-        display: none
-
-  .pagination-wrap
-    padding-top: 30px
-
-  .books-list
-    .item
-      min-width: 384px
-
-  .book
-    .cover,
-    .author,
-    .inf
-      width: 400px
-      float: left
-      img
-        display: block
-        max-width: 248px
-        margin: 0 auto
-    .author
-      margin-top: 30px
-      box-shadow: 0 0 20px rgba(77, 135, 150,0.6)
-
-    .inf
-      td:first-child,
-      td
-        text-align: center
-  .author-books
-    padding: 1px 1px 10px
-    overflow-y: hidden
-    .ui.five.connected.items
-      .description
-        display: none
-  .comments
-    .ui.threaded.comments
-      margin: 0
-      .comment
-        min-width: 400px
 
 @include max-screen(320px)
   .container,
@@ -142,13 +90,8 @@
     .inf
       width: 300px
       float: left
-      img
-        display: block
-        max-width: 248px
-        margin: 0 auto
     .author
       margin-top: 30px
-      box-shadow: 0 0 20px rgba(77, 135, 150,0.6)
 
     .inf
       td:first-child,
@@ -157,3 +100,88 @@
   .author-books,
   .comments
     display: none
+
+@include screen(320px, 480px)
+  .container,
+  header,
+  .pagination-wrap,
+  .books-list,
+    width: 400px
+
+  header
+    .item,
+    #search-form
+      width: 133px
+    #search-form
+      i
+        display: none
+
+  .pagination-wrap
+    padding-top: 30px
+
+  .books-list
+    .item
+      min-width: 384px
+
+  .book
+    .cover,
+    .author,
+    .inf
+      width: 400px
+      float: left
+    .author
+      margin-top: 30px
+
+    .inf
+      td:first-child,
+      td
+        text-align: center
+  .author-books
+    padding: 1px 1px 10px
+    overflow-y: hidden
+    .ui.five.connected.items
+      .description
+        display: none
+  .comments
+    .ui.threaded.comments
+      margin: 0
+      .comment
+        min-width: 400px
+
+@include screen(480px, 768px)
+  .container,
+  header,
+  .pagination-wrap,
+  .books-list,
+    width: 664px
+
+  .books-list
+    .item
+      max-width: 664px
+
+  .book
+    .cover,
+    .author,
+    .inf
+      width: 664px
+      float: left
+    .author
+      margin-top: 30px
+
+    .inf
+      td:first-child,
+      td
+        text-align: center
+  .author-books
+    padding: 1px 1px 10px
+    overflow-y: hidden
+    .ui.five.connected.items
+      .description
+        display: none
+  .comments
+    .ui.threaded.comments
+      margin: 0
+      .comment
+        min-width: 500px
+
+@include screen(768px, 1280px)

@@ -20,7 +20,7 @@
   cursor: pointer
 
 
-@include screen(768px, 1280px)
+
 
 @include screen(320px, 480px)
   .new-comment,
@@ -31,3 +31,15 @@
     padding: 0px 15px 15px 0px
     max-height: 1000px
     overflow: scroll
+
+@include screen(480px, 768px)
+  .new-comment,
+  .ui.threaded.comments
+    width: 664px
+
+  .ui.threaded.comments
+    padding: 0px 15px 15px 0px
+    max-height: 1000px
+    overflow: scroll
+
+@include screen(768px, 1280px)

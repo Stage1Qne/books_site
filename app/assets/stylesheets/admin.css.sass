@@ -93,16 +93,19 @@ header
 
 @include screen(768px, 1280px)
 
-@include screen(320px, 480px)
-  .head_log-in
-    margin-top: 30px
-  #log-in-form
-    width: 400px
-    margin-bottom: 30px
-
 @include max-screen(320px)
   .head_log-in
     margin-top: 15px
   #log-in-form
     width: 300px
+    margin-bottom: 30px
+
+@include screen(320px, 480px)
+  #log-in-form
+    width: 400px
+    margin-bottom: 30px
+
+@include screen(480px, 768px)
+  #log-in-form
+    width: 664px
     margin-bottom: 30px
